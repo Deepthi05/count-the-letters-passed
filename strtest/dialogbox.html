@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to check dialog box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var givenStr= prompt("Please enter a string");
+    if (givenStr!= null) {
+        var result = " ## ";
+        for(var i=0; i<givenStr.length;i++) {
+         if(!result.includes(givenStr[i])){
+            result += givenStr[i]+":"+charPos(givenStr, givenStr[i]);
+          }
+        }
+        document.getElementById("demo").innerHTML = result;
+    }
+}
+
+function charPos(str, char) {
+  var count = 0;
+  for(var j=0;j<str.length;j++){
+        if(str[j]==char){
+          count++;
+        }
+  }
+  return count;
+}
+
+</script>
+
+</body>
+</html>
